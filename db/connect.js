@@ -6,7 +6,7 @@ const connectDB = (url) => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
-    .then(() => console.log("CONNECTED TO SERVER"))
+    .then(() => console.log("CONNECTED TO DATABASE"))
     .catch((err) => console.log(err));
 };
 
