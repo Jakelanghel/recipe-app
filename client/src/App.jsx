@@ -1,12 +1,11 @@
-import React from 'react'
-import './App.css'
-
+import React from "react";
+import Sidebar from "./components/side-bar/Sidebar";
 function App() {
   return (
     <div>
-      <p>Clean React App</p>
+      <Sidebar />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
