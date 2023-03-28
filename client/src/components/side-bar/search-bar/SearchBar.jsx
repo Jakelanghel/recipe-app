@@ -12,8 +12,10 @@ const SearchBar = () => {
   };
   return (
     <ContainerSearchBar>
-      <img src={images.search} alt="Search img" onClick={handleSearch} />
       <label htmlFor="searchInput"></label>
+      <button>
+        <img src={images.search} alt="Search img" onClick={handleSearch} />
+      </button>
       <input
         type="text"
         placeholder="Search recipes"

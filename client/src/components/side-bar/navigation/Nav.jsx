@@ -2,7 +2,6 @@ import React from "react";
 import { StyledNav } from "./StyledNav";
 import { images } from "../../../constants/images";
 const Nav = () => {
-  console.log(images);
   return (
     <StyledNav>
       <button>

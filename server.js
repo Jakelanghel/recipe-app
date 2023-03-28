@@ -11,11 +11,11 @@ app.use(express.json());
 
 // routes
 app.use("/api/v1/recipes", recipesRoutes);
+
 app.use(notFound);
 app.use(errorHandlerMiddleware);
-
 // port
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 const start = async () => {
   try {
