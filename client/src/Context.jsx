@@ -10,6 +10,7 @@ const ContextProvider = ({ children }) => {
   const toggleSideBar = () => {
     setSideBarOpen((oldState) => !oldState);
   };
+
   return (
     <Context.Provider
       value={{
