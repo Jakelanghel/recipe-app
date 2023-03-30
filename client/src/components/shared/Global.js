@@ -14,8 +14,13 @@ export const GlobalStyles = createGlobalStyle`
         padding: 0;
     }
 
+    img {
+        display: block;
+    }
+
     .container-app {
         position: relative;
+        padding-bottom: 2rem;
     }
 
 `;

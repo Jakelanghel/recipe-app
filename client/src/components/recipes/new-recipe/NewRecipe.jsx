@@ -1,5 +1,8 @@
 import React, { useRef } from "react";
 import { StyledNewRecipe } from "./NewRecipe.Styled";
+import { addIngredient } from "./recipe-functions/addIngredient";
+import { addInstruction } from "./recipe-functions/addInstruction";
+import { createNewRecipe } from "./recipe-functions/createNewRecipe";
 
 const NewRecipe = () => {
   const nameRef = useRef();
@@ -8,107 +11,87 @@ const NewRecipe = () => {
   const ingredientRef = useRef();
   const instructionRef = useRef();
 
-  const getNewRecipeData = (e) => {
-    e.preventDefault();
-    const recipeName = nameRef.current.value;
-    const category = categoryRef.current.value;
-    const cookTime = cookTimeRef.current.value;
-  };
-
-  const addIngredient = (e) => {
-    e.preventDefault();
-    const ingredient = ingredientRef.current.value;
-    const list = document.querySelector(".ingredients-list");
-    const item = document.createElement("li");
-    item.textContent = ingredient;
-    item.classList.add("ingredient");
-    list.appendChild(item);
-    ingredientRef.current.value = "";
-  };
-
-  const addInstruction = (e) => {
-    e.preventDefault();
-    const instruction = instructionRef.current.value;
-    const list = document.querySelector(".instruction-list");
-    const item = document.createElement("li");
-    item.textContent = instruction;
-    item.classList.add("instruction");
-    list.appendChild(item);
-    ingredientRef.current.value = "";
-  };
+  // const getNewRecipeData = (e) => {
+  //   e.preventDefault();
+  //   const recipeName = nameRef.current.value;
+  //   const category = categoryRef.current.value;
+  //   const cookTime = cookTimeRef.current.value;
+  // };
 
   return (
     <StyledNewRecipe>
       <form action="">
-        <label htmlFor="recipeTitle">
-          Recipe Name
-          <input
-            type="text"
-            id="recipeTitle"
-            placeholder="Enter recipe name..."
-            ref={nameRef}
-          />
-        </label>
-        <label htmlFor="category">
-          Category
-          <input
-            type="text"
-            id="category"
-            placeholder="Enter recipe category..."
-            ref={categoryRef}
-          />
-        </label>
-        <label htmlFor="cookTime">
-          Cook time
-          <input
-            type="text"
-            id="cookTime"
-            placeholder="Cook time..."
-            ref={cookTimeRef}
-          />
-        </label>
+        <label htmlFor="recipeTitle">Recipe Name</label>
+        <input
+          type="text"
+          id="recipeTitle"
+          placeholder="Enter recipe name..."
+          ref={nameRef}
+        />
 
-        <div className="container-add-to-list">
-          <div className="container-flex">
-            <label htmlFor="ingredients">
-              Ingredients
-              <input
-                type="text"
-                id="ingredients"
-                placeholder="List ingredients..."
-                ref={ingredientRef}
-              />
-            </label>
-            <button className="add-ingredient-btn" onClick={addIngredient}>
-              +
-            </button>
-          </div>
+        <label htmlFor="category">Category</label>
+        <input
+          type="text"
+          id="category"
+          placeholder="Enter recipe category..."
+          ref={categoryRef}
+        />
 
-          <div className="container-flex">
-            <ul className="ingredients-list"></ul>
-          </div>
+        <label htmlFor="cookTime">Cook time</label>
+        <input
+          type="text"
+          id="cookTime"
+          placeholder="Cook time..."
+          ref={cookTimeRef}
+        />
+
+        <label htmlFor="ingredients">Ingredients</label>
+        <div className="container-flex">
+          <input
+            type="text"
+            id="ingredients"
+            placeholder="Add ingredient..."
+            ref={ingredientRef}
+          />
+          <button
+            className="ingredient-btn"
+            onClick={(e) => addIngredient(e, ingredientRef)}
+          >
+            Add
+          </button>
         </div>
 
-        <div className="container-add-to-list">
-          <div>
-            <label htmlFor="instructions">
-              Instructions
-              <textarea
-                type="text"
-                id="instructions"
-                placeholder="List instructions..."
-                ref={instructionRef}
-              />
-            </label>
-            <button onClick={addInstruction}>Add instruction</button>
-          </div>
-
-          <div className="container-flex">
-            <ol className="instruction-list"></ol>
-          </div>
+        <div className="container-flex">
+          <ul className="ingredients-list"></ul>
         </div>
 
-        <button onClick={getNewRecipeData}>Add recipe</button>
+        <label htmlFor="instructions">Instructions</label>
+        <div>
+          <textarea
+            type="text"
+            id="instructions"
+            placeholder="Add instruction..."
+            ref={instructionRef}
+            className="instructions-input"
+          />
+          <button
+            className="instruction-btn"
+            onClick={(e) => addInstruction(e, instructionRef)}
+          >
+            Add instruction
+          </button>
+        </div>
+
+        <div className="container-flex">
+          <ol className="instruction-list"></ol>
+        </div>
+
+        <button
+          className="submit-btn"
+          onClick={(e) => createNewRecipe(e, nameRef, categoryRef, cookTimeRef)}
+        >
+          Add recipe
+        </button>
       </form>
     </StyledNewRecipe>
   );

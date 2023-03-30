@@ -4,7 +4,7 @@ const Context = React.createContext();
 
 const ContextProvider = ({ children }) => {
   const [sideBarOpen, setSideBarOpen] = useState(false);
-  const [newRecipeOpen, serNewRecipeOpen] = useState(true);
+  const [newRecipeOpen, setNewRecipeOpen] = useState(false);
   const [data, setData] = useState(null);
 
   const toggleSideBar = () => {
@@ -17,7 +17,7 @@ const ContextProvider = ({ children }) => {
         sideBarOpen,
         setSideBarOpen,
         newRecipeOpen,
-        serNewRecipeOpen,
+        setNewRecipeOpen,
         data,
         setData,
         toggleSideBar,

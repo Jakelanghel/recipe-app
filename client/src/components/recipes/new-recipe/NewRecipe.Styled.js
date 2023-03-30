@@ -13,27 +13,47 @@ export const StyledNewRecipe = styled.div`
   label {
     display: flex;
     flex-direction: column;
-    margin-bottom: 0.5rem;
   }
 
-  input {
-    max-width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+  input,
+  textarea {
     font-size: 1rem;
     padding: 0.5rem 1rem;
-    margin-top: 0.5rem;
     border-radius: 5px;
   }
 
   .container-flex {
     display: flex;
-    align-items: flex-end;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .ingredient-btn {
+    /* margin-top: 7px; */
+    padding: 0.5rem 1rem;
   }
 
   .ingredients-list {
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
+  }
+
+  .instructions-input {
+    width: 100%;
+    min-height: 100px;
+  }
+
+  .instruction-btn {
+    display: block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .submit-btn {
+    font-size: 1.25rem;
+    width: 150px;
+    padding: 0.5rem 0;
+    margin: 0 auto;
   }
 `;

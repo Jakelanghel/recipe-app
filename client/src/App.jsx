@@ -7,11 +7,8 @@ import NewRecipe from "./components/recipes/new-recipe/NewRecipe";
 import { Context } from "./Context";
 
 function App() {
-  // const [sideBarOpen, setSideBarOpen] = useState(false);
-  const [newRecipeOpen, serNewRecipeOpen] = useState(true);
-  const [data, setData] = useState(null);
-
-  const { sideBarOpen } = React.useContext(Context);
+  const { sideBarOpen, newRecipeOpen, setNewRecipeOpen, setData } =
+    React.useContext(Context);
 
   useEffect(() => {
     const fetchRecipes = async () => {
@@ -26,8 +23,6 @@ function App() {
     fetchRecipes();
   }, []);
 
-  console.log(data);
-
   return (
     <>
       <GlobalStyles />
@@ -36,7 +31,6 @@ function App() {
         <Header />
         {sideBarOpen ? <Sidebar /> : null}
         {newRecipeOpen ? <NewRecipe /> : null}
-        {/* {data} */}
       </div>
     </>
   );

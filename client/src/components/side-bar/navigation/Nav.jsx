@@ -1,10 +1,19 @@
 import React from "react";
 import { StyledNav } from "./StyledNav";
 import { images } from "../../../constants/images";
+
+import { Context } from "../../../Context";
+
 const Nav = () => {
+  const { setNewRecipeOpen, setSideBarOpen } = React.useContext(Context);
+
+  const handleNewRecipe = () => {
+    setNewRecipeOpen((oldState) => !oldState);
+    setSideBarOpen(false);
+  };
   return (
     <StyledNav>
-      <button>
+      <button onClick={handleNewRecipe}>
         <img src={images.plusIcon} alt="new recipe" />
         New recipe
       </button>
