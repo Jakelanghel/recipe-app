@@ -26,7 +26,8 @@
       "Add sauce to pan with chicken and bring to a simmer.",
       "Cook chicken in sauce for 20-25 minutes or until fully cooked.",
       "Serve hot over rice or noodles."
-    ]
+    ],
+    "favorites": false
   },
   {
     "name": "Taco Soup",
@@ -68,7 +69,8 @@
       "Rub beef with olive oil and seasonings.",
       "Place beef in a roasting pan and roast in oven for 1 1/2 - 2 hours, or until desired doneness is achieved.",
       "Let rest for 10-15 minutes before slicing and serving."
-    ]
+    ],
+    "favorites": false
   },
   {
     "name": "Pesto Pasta",
@@ -88,7 +90,8 @@
       "In a large bowl, mix together pesto, parmesan cheese, olive oil, salt, and pepper.",
       "Add cooked pasta and pine nuts to the bowl and mix well.",
       "Serve hot."
-    ]
+    ],
+    "favorites": false
   },
   {
     "name": "Spaghetti and Meatballs",
@@ -115,7 +118,8 @@
       "Heat tomato sauce in a saucepan.",
       "Add meatballs to the sauce and simmer for 10-15 minutes.",
       "Serve spaghetti with meatballs and sauce on top."
-    ]
+    ],
+    "favorites": false
   },
   {
     "name": "Beef Stroganoff",
@@ -146,6 +150,7 @@
       "Add beef broth to the skillet and bring to a boil.",
       "Reduce heat and simmer until sauce thickens.",
       "Stir in sour cream and return beef to the skillet."
-    ]
+    ],
+    "favorites": false
   }
 ]

@@ -17,6 +17,10 @@ const RecipeSchema = new mongoose.Schema({
     type: Array,
     required: [true, "Must provide a list of ingredients"],
   },
+  favorite: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 module.exports = mongoose.model("Recipe", RecipeSchema);

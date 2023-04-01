@@ -23,4 +23,8 @@ export const GlobalStyles = createGlobalStyle`
         padding-bottom: 2rem;
     }
 
+    .no-scroll {
+        overflow: hidden;
+    }
+
 `;

@@ -4,11 +4,11 @@ const Context = React.createContext();
 
 const ContextProvider = ({ children }) => {
   const [sideBarOpen, setSideBarOpen] = useState(false);
-  const [newRecipeOpen, setNewRecipeOpen] = useState(false);
   const [recipeData, setRecipeData] = useState(null);
 
   const toggleSideBar = () => {
     setSideBarOpen((oldState) => !oldState);
+    document.querySelector("body").classList.toggle("no-scroll");
   };
 
   useEffect(() => {
@@ -28,9 +28,6 @@ const ContextProvider = ({ children }) => {
     <Context.Provider
       value={{
         sideBarOpen,
-        setSideBarOpen,
-        newRecipeOpen,
-        setNewRecipeOpen,
         recipeData,
         setRecipeData,
         toggleSideBar,

@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import Sidebar from "./components/side-bar/Sidebar";
 import { GlobalStyles } from "./components/shared/Global";
 import Header from "./components/header/Header";
-import NewRecipe from "./components/recipes/new-recipe/NewRecipe";
-import Home from "./components/home/Home";
-
+import Router from "./components/router/Router";
 import { Context } from "./Context";
 
 function App() {
@@ -17,9 +15,8 @@ function App() {
 
       <div className="container-app">
         <Header />
-        <Home />
         {sideBarOpen ? <Sidebar /> : null}
-        {newRecipeOpen ? <NewRecipe /> : null}
+        <Router />
       </div>
     </>
   );
