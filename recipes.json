@@ -1,0 +1,151 @@
+[
+  {
+    "name": "Bourbon Chicken",
+    "category": "Asian",
+    "cookTime": "1hr",
+    "ingredients": [
+      "3 lbs chicken thighs",
+      "3 tbsp cornstarch",
+      "1/4 cup green onions",
+      "1/2 tsp fresh grated ginger",
+      "4 cloves garlic , minced",
+      "1/2 tsp crushed red chili flakes",
+      "1/3 cup apple juice",
+      "1 1/2 tbsp honey",
+      "1/4 cup brown sugar",
+      "1/4 cup brown ketchup",
+      "3 tbsp cider vinegar",
+      "1/4 cup water",
+      "1/4 cup bourbon",
+      "1/4 cup soy sauce",
+      "salt and pepper to taste"
+    ],
+    "instructions": [
+      "Brown chicken, 5 min on each side to get some color on the chicken.",
+      "Combine all remaining ingredients in a bowl and whisk together.",
+      "Add sauce to pan with chicken and bring to a simmer.",
+      "Cook chicken in sauce for 20-25 minutes or until fully cooked.",
+      "Serve hot over rice or noodles."
+    ]
+  },
+  {
+    "name": "Taco Soup",
+    "category": "Mexican",
+    "cookTime": "45min",
+    "ingredients": [
+      "1 lb ground beef",
+      "1 onion, chopped",
+      "1 can black beans, drained and rinsed",
+      "1 can corn, drained",
+      "1 can diced tomatoes",
+      "1 can tomato sauce",
+      "1 can green chilies",
+      "1 pkg taco seasoning",
+      "1 cup water"
+    ],
+    "instructions": [
+      "Brown beef and onion together in a large pot.",
+      "Add all remaining ingredients to pot and stir together.",
+      "Simmer for 30-40 minutes.",
+      "Serve hot with toppings of your choice."
+    ]
+  },
+  {
+    "name": "Roast Beef",
+    "category": "American",
+    "cookTime": "2hrs",
+    "ingredients": [
+      "3 lb beef roast",
+      "1 tbsp olive oil",
+      "1 tbsp garlic powder",
+      "1 tbsp onion powder",
+      "1 tsp paprika",
+      "1 tsp salt",
+      "1/2 tsp black pepper"
+    ],
+    "instructions": [
+      "Preheat oven to 325 degrees F.",
+      "Rub beef with olive oil and seasonings.",
+      "Place beef in a roasting pan and roast in oven for 1 1/2 - 2 hours, or until desired doneness is achieved.",
+      "Let rest for 10-15 minutes before slicing and serving."
+    ]
+  },
+  {
+    "name": "Pesto Pasta",
+    "category": "Italian",
+    "cookTime": "30min",
+    "ingredients": [
+      "1 lb pasta",
+      "1/2 cup pesto",
+      "1/2 cup grated parmesan cheese",
+      "1/4 cup pine nuts",
+      "1/4 cup olive oil",
+      "salt and pepper to taste"
+    ],
+    "instructions": [
+      "Cook pasta according to package instructions.",
+      "In a separate pan, toast pine nuts until lightly browned.",
+      "In a large bowl, mix together pesto, parmesan cheese, olive oil, salt, and pepper.",
+      "Add cooked pasta and pine nuts to the bowl and mix well.",
+      "Serve hot."
+    ]
+  },
+  {
+    "name": "Spaghetti and Meatballs",
+    "category": "Italian",
+    "cookTime": "1hr 30min",
+    "ingredients": [
+      "1 lb ground beef",
+      "1/2 cup breadcrumbs",
+      "1/4 cup milk",
+      "1/4 cup grated parmesan cheese",
+      "1 egg",
+      "1/4 cup chopped parsley",
+      "1 tsp salt",
+      "1/2 tsp black pepper",
+      "1 lb spaghetti",
+      "1 jar tomato sauce"
+    ],
+    "instructions": [
+      "Preheat oven to 350F.",
+      "Mix ground beef, breadcrumbs, milk, parmesan cheese, egg, parsley, salt, and pepper in a bowl.",
+      "Form the mixture into meatballs and place on a baking sheet.",
+      "Bake meatballs for 20-25 minutes, or until fully cooked.",
+      "Cook spaghetti according to package instructions.",
+      "Heat tomato sauce in a saucepan.",
+      "Add meatballs to the sauce and simmer for 10-15 minutes.",
+      "Serve spaghetti with meatballs and sauce on top."
+    ]
+  },
+  {
+    "name": "Beef Stroganoff",
+    "category": "Russian",
+    "cookTime": "1hr",
+    "ingredients": [
+      "1 lb beef tenderloin",
+      "1/4 cup flour",
+      "1 tsp salt",
+      "1/2 tsp black pepper",
+      "2 tbsp olive oil",
+      "1 onion, chopped",
+      "8 oz mushrooms, sliced",
+      "1/4 cup red wine",
+      "1 cup beef broth",
+      "1 cup sour cream",
+      "1 lb egg noodles"
+    ],
+    "instructions": [
+      "Cut beef into thin strips.",
+      "Mix flour, salt, and pepper in a bowl.",
+      "Coat beef strips in the flour mixture.",
+      "Heat olive oil in a skillet.",
+      "Add beef strips and cook until browned.",
+      "Remove beef from the skillet.",
+      "Add onion and mushrooms to the skillet and cook until softened.",
+      "Add red wine to the skillet and stir to scrape up browned bits.",
+      "Add beef broth to the skillet and bring to a boil.",
+      "Reduce heat and simmer until sauce thickens.",
+      "Stir in sour cream and return beef to the skillet."
+    ]
+  }
+]

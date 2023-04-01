@@ -5,11 +5,24 @@ const Context = React.createContext();
 const ContextProvider = ({ children }) => {
   const [sideBarOpen, setSideBarOpen] = useState(false);
   const [newRecipeOpen, setNewRecipeOpen] = useState(false);
-  const [data, setData] = useState(null);
+  const [recipeData, setRecipeData] = useState(null);
 
   const toggleSideBar = () => {
     setSideBarOpen((oldState) => !oldState);
   };
+
+  useEffect(() => {
+    const fetchRecipes = async () => {
+      try {
+        const response = await fetch("/api/v1/recipes");
+        const data = await response.json();
+        setRecipeData(data.recipes);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    fetchRecipes();
+  }, []);
 
   return (
     <Context.Provider
@@ -18,8 +31,8 @@ const ContextProvider = ({ children }) => {
         setSideBarOpen,
         newRecipeOpen,
         setNewRecipeOpen,
-        data,
-        setData,
+        recipeData,
+        setRecipeData,
         toggleSideBar,
       }}
     >

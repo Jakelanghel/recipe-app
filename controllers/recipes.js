@@ -49,4 +49,3 @@ module.exports = {
   updateRecipe,
   deleteRecipe,
 };
-asyncWrapper(async () => {});

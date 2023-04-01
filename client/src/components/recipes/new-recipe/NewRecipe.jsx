@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
 import { StyledNewRecipe } from "./NewRecipe.Styled";
-import { addIngredient } from "./recipe-functions/addIngredient";
-import { addInstruction } from "./recipe-functions/addInstruction";
-import { createNewRecipe } from "./recipe-functions/createNewRecipe";
+import { addIngredient } from "./new-recipe-functions/addIngredient";
+import { addInstruction } from "./new-recipe-functions/addInstruction";
+import { createNewRecipe } from "./new-recipe-functions/createNewRecipe";
 
 const NewRecipe = () => {
   const nameRef = useRef();
