@@ -6,4 +6,9 @@ export const StyledRecipePreview = styled.div`
   margin-bottom: 3rem;
   text-align: center;
   border: solid 1px black;
+
+  img {
+    width: 45px;
+    margin: 0 auto;
+  }
 `;

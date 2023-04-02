@@ -30,6 +30,7 @@ const Home = () => {
             name={recipe.name}
             category={recipe.category}
             ingredients={recipe.ingredients.slice(0, 3)}
+            fav={recipe.favorite}
           />
         );
       })
