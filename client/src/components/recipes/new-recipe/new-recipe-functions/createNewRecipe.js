@@ -1,4 +1,10 @@
-export const createNewRecipe = (e, nameRef, categoryRef, cookTimeRef) => {
+export const createNewRecipe = (
+  e,
+  nameRef,
+  categoryRef,
+  cookTimeRef,
+  navigate
+) => {
   e.preventDefault();
   let ingredients = document.querySelectorAll(".ingredient");
   let instructions = document.querySelectorAll(".instruction");
@@ -22,6 +28,6 @@ export const createNewRecipe = (e, nameRef, categoryRef, cookTimeRef) => {
     body: JSON.stringify(newRecipe),
   })
     .then((response) => response.json())
-    .then((data) => console.log(data))
+    .then((data) => navigate("/"))
     .catch((error) => console.error(error));
 };

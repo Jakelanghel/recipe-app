@@ -5,6 +5,7 @@ import Home from "../home/Home";
 import NewRecipe from "../recipes/new-recipe/NewRecipe";
 import Favorites from "../favorites/Favorites";
 import ShoppingList from "../shopping-list/ShoppingList";
+import SingleRecipe from "../recipes/singleRecipe/SingleRecipe";
 
 const Router = () => {
   const location = useLocation();
@@ -14,6 +15,7 @@ const Router = () => {
       <Route base path="/new-recipe" element={<NewRecipe />} />
       <Route base path="/favorites" element={<Favorites />} />
       <Route base path="/shopping-list" element={<ShoppingList />} />
+      <Route base path="/single-recipe" element={<SingleRecipe />} />
     </Routes>
   );
 };

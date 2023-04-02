@@ -4,12 +4,15 @@ import { addIngredient } from "./new-recipe-functions/addIngredient";
 import { addInstruction } from "./new-recipe-functions/addInstruction";
 import { createNewRecipe } from "./new-recipe-functions/createNewRecipe";
 
+import { useNavigate } from "react-router-dom";
+
 const NewRecipe = () => {
   const nameRef = useRef();
   const categoryRef = useRef();
   const cookTimeRef = useRef();
   const ingredientRef = useRef();
   const instructionRef = useRef();
+  const navigate = useNavigate();
 
   return (
     <StyledNewRecipe>
@@ -81,7 +84,9 @@ const NewRecipe = () => {
 
         <button
           className="submit-btn"
-          onClick={(e) => createNewRecipe(e, nameRef, categoryRef, cookTimeRef)}
+          onClick={(e) =>
+            createNewRecipe(e, nameRef, categoryRef, cookTimeRef, navigate)
+          }
         >
           Add recipe
         </button>

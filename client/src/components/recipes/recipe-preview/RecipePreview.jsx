@@ -1,12 +1,19 @@
 import React from "react";
 import { StyledRecipePreview } from "./RecipePreview.Styled";
+import { useNavigate } from "react-router-dom";
+import { Context } from "../../../Context";
 
 const RecipePreview = (props) => {
   const { name, category, ingredients, id } = props;
+  const navigate = useNavigate();
+  const { setSingleRecipeID } = React.useContext(Context);
 
   const handleClick = () => {
-    console.log("OPEN RECIPE");
+    localStorage.setItem("recipeId", id);
+    setSingleRecipeID(id);
+    navigate("/single-recipe");
   };
+
   return (
     <StyledRecipePreview onClick={handleClick}>
       <p className="name">{name}</p>
