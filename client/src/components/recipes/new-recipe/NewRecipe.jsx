@@ -11,13 +11,6 @@ const NewRecipe = () => {
   const ingredientRef = useRef();
   const instructionRef = useRef();
 
-  // const getNewRecipeData = (e) => {
-  //   e.preventDefault();
-  //   const recipeName = nameRef.current.value;
-  //   const category = categoryRef.current.value;
-  //   const cookTime = cookTimeRef.current.value;
-  // };
-
   return (
     <StyledNewRecipe>
       <form action="">

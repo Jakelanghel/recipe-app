@@ -22,6 +22,12 @@ export const StyledNewRecipe = styled.div`
     border-radius: 5px;
   }
 
+  li {
+    word-wrap: break-word;
+    padding: 5px;
+    margin: 5px;
+  }
+
   .container-flex {
     display: flex;
     justify-content: space-between;
