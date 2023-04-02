@@ -21,6 +21,14 @@ const getRecipe = asyncWrapper(async (req, res, next) => {
   res.status(200).json({ recipe });
 });
 
+const getFavoriteRecipes = asyncWrapper(async (req, res, next) => {
+  const recipes = await Recipe.find({ favorite: true });
+  if (!recipes) {
+    return next(createCustomError(`No recipes have been favorited`));
+  }
+  res.status(200).json({ recipes });
+});
+
 const updateRecipe = asyncWrapper(async (req, res) => {
   const { id: recipeID } = req.params;
   const recipe = await Recipe.findOneAndUpdate({ _id: recipeID }, req.body, {
@@ -64,4 +72,5 @@ module.exports = {
   updateRecipe,
   deleteRecipe,
   updateFavorite,
+  getFavoriteRecipes,
 };
