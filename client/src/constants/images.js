@@ -7,6 +7,7 @@ import menuIcon from "../assets/bars.svg";
 import utensilsIcon from "../assets/utensils.svg";
 import favIconEmpty from "../assets/heart-regular.svg";
 import favIconSolid from "../assets/heart-solid.svg";
+import backIcon from "../assets/arrow-left.svg";
 
 export const images = {
   search,
@@ -18,4 +19,5 @@ export const images = {
   utensilsIcon,
   favIconEmpty,
   favIconSolid,
+  backIcon,
 };

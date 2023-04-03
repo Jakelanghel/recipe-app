@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { StyledSingleRecipe } from "./SingleRecipe.Styled";
 import { Context } from "../../../Context";
+import BackBtn from "../../shared/back-btn/BackBtn";
 
 const SingleRecipe = () => {
   const { singleRecipeID } = React.useContext(Context);
@@ -48,6 +49,8 @@ const SingleRecipe = () => {
         <h2>instructions</h2>
         <ol>{instructions}</ol>
       </div>
+
+      <BackBtn />
     </StyledSingleRecipe>
   ) : (
     <h1>loading...</h1>
