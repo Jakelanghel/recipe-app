@@ -11,4 +11,10 @@ export const StyledRecipePreview = styled.div`
     width: 45px;
     margin: 0 auto;
   }
+
+  .container-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
 `;

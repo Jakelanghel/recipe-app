@@ -11,10 +11,14 @@ const RecipePreview = (props) => {
 
   const [isFav, setIsFav] = useState(fav);
 
-  const handleClick = () => {
+  const showFullRecipe = () => {
     localStorage.setItem("recipeId", id);
     setSingleRecipeID(id);
     navigate("/single-recipe");
+  };
+
+  const handleDelete = () => {
+    console.log("DELETE");
   };
 
   const handleFavoriteClick = async () => {
@@ -45,7 +49,10 @@ const RecipePreview = (props) => {
       <p className="ingredients">{ingredients[1]}</p>
       <p className="ingredients">{ingredients[2]}</p>
 
-      <button onClick={handleClick}>see full recipe</button>
+      <div className="container-actions">
+        <button onClick={showFullRecipe}>see full recipe</button>
+        <button onClick={handleDelete}>delete</button>
+      </div>
     </StyledRecipePreview>
   );
 };
