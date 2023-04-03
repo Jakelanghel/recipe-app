@@ -3,11 +3,12 @@ import { StyledRecipePreview } from "./RecipePreview.Styled";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../../../Context";
 import { images } from "../../../constants/images";
+import { deleteRecipe } from "../recipe-utils/deleteRecipe";
 
 const RecipePreview = (props) => {
   const { name, category, ingredients, id, fav } = props;
   const navigate = useNavigate();
-  const { setSingleRecipeID } = React.useContext(Context);
+  const { setSingleRecipeID, setRecipeData } = React.useContext(Context);
 
   const [isFav, setIsFav] = useState(fav);
 
@@ -18,7 +19,9 @@ const RecipePreview = (props) => {
   };
 
   const handleDelete = () => {
-    console.log("DELETE");
+    console.log(id);
+
+    deleteRecipe(id, setRecipeData);
   };
 
   const handleFavoriteClick = async () => {

@@ -3,7 +3,6 @@ const asyncWrapper = require("../middleware/async-wrapper");
 const { createCustomError } = require("../errors/custom-error");
 
 const { getSortCriteria } = require("../util/getSortCriteria");
-console.log(getSortCriteria + " sortC");
 
 const getAllRecipes = asyncWrapper(async (req, res, next) => {
   const sortParam = req.query.sort;
