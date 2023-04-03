@@ -2,14 +2,39 @@ const Recipe = require("../models/Recipe");
 const asyncWrapper = require("../middleware/async-wrapper");
 const { createCustomError } = require("../errors/custom-error");
 
-const createRecipe = asyncWrapper(async (req, res) => {
-  const recipe = await Recipe.create(req.body);
-  res.status(200).json({ recipe });
-});
+// const getAllRecipes = asyncWrapper(async (req, res) => {
+//   const recipes = await Recipe.find({});
+//   res.status(200).json({ recipes });
+// });
 
-const getAllRecipes = asyncWrapper(async (req, res) => {
-  const recipes = await Recipe.find({});
-  res.status(200).json({ recipes });
+const getAllRecipes = asyncWrapper(async (req, res, next) => {
+  const sortParam = req.query.sort;
+  let recipes;
+  console.log(sortParam);
+
+  // console.log(sortCriteria);
+
+  if (sortParam) {
+    // Sort by the specified field
+    let sortCriteria = null;
+    if (sortParam === "favorites") {
+      sortCriteria = { favorite: -1 };
+    } else if (sortParam === "cook time") {
+      sortCriteria = { cookTime: 1 };
+    } else if (sortParam === "category") {
+      sortCriteria = { category: 1 };
+    }
+    recipes = await Recipe.find().sort(sortCriteria);
+  } else {
+    // No sort parameter, return all recipes
+    recipes = await Recipe.find({});
+  }
+
+  if (!recipes) {
+    return next(createCustomError(`No recipes found`));
+  }
+
+  res.status(200).json({ success: true, data: recipes });
 });
 
 const getRecipe = asyncWrapper(async (req, res, next) => {
@@ -27,6 +52,11 @@ const getFavoriteRecipes = asyncWrapper(async (req, res, next) => {
     return next(createCustomError(`No recipes have been favorited`));
   }
   res.status(200).json({ recipes });
+});
+
+const createRecipe = asyncWrapper(async (req, res) => {
+  const recipe = await Recipe.create(req.body);
+  res.status(200).json({ recipe });
 });
 
 const updateRecipe = asyncWrapper(async (req, res) => {
