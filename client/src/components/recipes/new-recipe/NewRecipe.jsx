@@ -4,13 +4,15 @@ import { addIngredient } from "./new-recipe-functions/addIngredient";
 import { addInstruction } from "./new-recipe-functions/addInstruction";
 import { createNewRecipe } from "./new-recipe-functions/createNewRecipe";
 import BackBtn from "../../shared/back-btn/BackBtn";
+import CookTimeInput from "./cook-time-input/CookTimeInput";
 
 import { useNavigate } from "react-router-dom";
 
 const NewRecipe = () => {
   const nameRef = useRef();
   const categoryRef = useRef();
-  const cookTimeRef = useRef();
+  const cookTimeRefHr = useRef();
+  const cookTimeRefMin = useRef();
   const ingredientRef = useRef();
   const instructionRef = useRef();
   const navigate = useNavigate();
@@ -35,13 +37,32 @@ const NewRecipe = () => {
         />
 
         <label htmlFor="cookTime">Cook time</label>
-        <input
+        {/* <input
           type="text"
           id="cookTime"
           placeholder="Cook time..."
           ref={cookTimeRef}
-        />
+        /> */}
 
+        {/* <div className="container-cook-time">
+          <label htmlFor="cookTimeHr">hrs:</label>
+          <input
+            type="number"
+            className="num-input cook-time-hr"
+            id="cookTimeHr"
+            ref={cookTimeRefHr}
+          />
+          <label htmlFor="cookTimeMin">mins:</label>
+
+          <input
+            type="number"
+            className="num-input cook-time-min"
+            id="cookTimeMin"
+            ref={cookTimeRefMin}
+          />
+        </div> */}
+
+        <CookTimeInput />
         <label htmlFor="ingredients">Ingredients</label>
         <div className="container-flex">
           <input
@@ -86,7 +107,14 @@ const NewRecipe = () => {
         <button
           className="submit-btn"
           onClick={(e) =>
-            createNewRecipe(e, nameRef, categoryRef, cookTimeRef, navigate)
+            createNewRecipe(
+              e,
+              nameRef,
+              categoryRef,
+              cookTimeRefHr,
+              cookTimeRefMin,
+              navigate
+            )
           }
         >
           Add recipe

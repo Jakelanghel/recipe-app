@@ -45,8 +45,9 @@ export const StyledNewRecipe = styled.div`
   }
 
   .num-input {
-    width: 75px;
-    padding: 0.5rem;
+    width: 60px;
+    padding: 0.25rem 0;
+    padding-left: 15px;
   }
 
   .ingredient-btn {
