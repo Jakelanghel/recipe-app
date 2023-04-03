@@ -28,6 +28,7 @@ const Home = () => {
     e.target.classList.add("active");
 
     try {
+      console.log(sortParam);
       const response = await fetch(`/api/v1/recipes?sort=${sortParam}`);
       const data = await response.json();
       setRecipeData(data.data);

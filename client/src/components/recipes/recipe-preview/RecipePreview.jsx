@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Context } from "../../../Context";
 import { images } from "../../../constants/images";
 import { deleteRecipe } from "../recipe-utils/deleteRecipe";
+import { formatCookTime } from "../recipe-utils/formatCookTime";
 
 const RecipePreview = (props) => {
   const { name, category, ingredients, id, fav, cookTime } = props;
@@ -23,6 +24,7 @@ const RecipePreview = (props) => {
   };
 
   const handleFavoriteClick = async () => {
+    console.log("X");
     try {
       const response = await fetch(`/api/v1/recipes/${id}/favorite`, {
         method: "PATCH",
@@ -38,14 +40,15 @@ const RecipePreview = (props) => {
     }
   };
 
-  const favImg = fav ? images.favIconSolid : images.favIconEmpty;
+  const favImg = isFav ? images.favIconSolid : images.favIconEmpty;
+  const cookTimeString = formatCookTime(cookTime);
 
   return (
     <StyledRecipePreview>
       <img src={favImg} alt="" onClick={handleFavoriteClick} />
       <p className="name">{name}</p>
       <p className="category">{category}</p>
-      <p className="cook-time">{cookTime}</p>
+      <p className="cook-time">{cookTimeString}</p>
 
       <p className="ingredients">{ingredients[0]}</p>
       <p className="ingredients">{ingredients[1]}</p>

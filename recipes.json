@@ -2,7 +2,7 @@
   {
     "name": "Bourbon Chicken",
     "category": "Asian",
-    "cookTime": "1hr",
+    "cookTime": "60",
     "ingredients": [
       "3 lbs chicken thighs",
       "3 tbsp cornstarch",
@@ -32,7 +32,7 @@
   {
     "name": "Taco Soup",
     "category": "Mexican",
-    "cookTime": "45min",
+    "cookTime": "45",
     "ingredients": [
       "1 lb ground beef",
       "1 onion, chopped",
@@ -54,7 +54,7 @@
   {
     "name": "Roast Beef",
     "category": "American",
-    "cookTime": "2hrs",
+    "cookTime": "120",
     "ingredients": [
       "3 lb beef roast",
       "1 tbsp olive oil",
@@ -75,7 +75,7 @@
   {
     "name": "Pesto Pasta",
     "category": "Italian",
-    "cookTime": "30min",
+    "cookTime": "30",
     "ingredients": [
       "1 lb pasta",
       "1/2 cup pesto",
@@ -96,7 +96,7 @@
   {
     "name": "Spaghetti and Meatballs",
     "category": "Italian",
-    "cookTime": "1hr 30min",
+    "cookTime": "90",
     "ingredients": [
       "1 lb ground beef",
       "1/2 cup breadcrumbs",
@@ -124,7 +124,7 @@
   {
     "name": "Beef Stroganoff",
     "category": "Russian",
-    "cookTime": "1hr",
+    "cookTime": "60",
     "ingredients": [
       "1 lb beef tenderloin",
       "1/4 cup flour",

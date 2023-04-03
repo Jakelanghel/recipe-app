@@ -1,8 +1,9 @@
 const Recipe = require("../models/Recipe");
 const asyncWrapper = require("../middleware/async-wrapper");
 const { createCustomError } = require("../errors/custom-error");
-
+const { cookTimeParseInt } = require("../util/cookTimeParseInt");
 const { getSortCriteria } = require("../util/getSortCriteria");
+const { cookTimeParseString } = require("../util/cookTimeParseString");
 
 const getAllRecipes = asyncWrapper(async (req, res, next) => {
   const sortParam = req.query.sort;
@@ -10,7 +11,25 @@ const getAllRecipes = asyncWrapper(async (req, res, next) => {
 
   if (sortParam) {
     const sortCriteria = getSortCriteria(sortParam);
-    recipes = await Recipe.find().sort(sortCriteria);
+
+    // If sorting by cook time, convert the cook time to minutes
+    if (sortCriteria.cookTime) {
+      recipes = await Recipe.find({}).lean();
+      recipes = recipes.map((recipe) => {
+        return {
+          ...recipe,
+          cookTime: parseInt(recipe.cookTime),
+        };
+      });
+
+      recipes = recipes.sort((recipe1, recipe2) => {
+        const cookTime1 = recipe1.cookTime;
+        const cookTime2 = recipe2.cookTime;
+        return cookTime1 - cookTime2;
+      });
+    } else {
+      recipes = await Recipe.find().sort(sortCriteria);
+    }
   } else {
     // No sort parameter, return all recipes
     recipes = await Recipe.find({});
