@@ -18,8 +18,12 @@ export const StyledNewRecipe = styled.div`
   input,
   textarea {
     font-size: 1rem;
-    padding: 0.5rem 1rem;
     border-radius: 5px;
+  }
+
+  .txt-input,
+  textarea {
+    padding: 0.5rem 1rem;
   }
 
   li {
@@ -32,6 +36,17 @@ export const StyledNewRecipe = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .container-cook-time {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .num-input {
+    width: 75px;
+    padding: 0.5rem;
   }
 
   .ingredient-btn {

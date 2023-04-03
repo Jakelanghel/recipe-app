@@ -27,4 +27,15 @@ export const GlobalStyles = createGlobalStyle`
         overflow: hidden;
     }
 
+    .back-btn {
+        width: 100px;
+        padding: 1rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .back-img {
+        width: 50px;
+    }
 `;

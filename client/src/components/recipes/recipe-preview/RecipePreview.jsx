@@ -6,7 +6,7 @@ import { images } from "../../../constants/images";
 import { deleteRecipe } from "../recipe-utils/deleteRecipe";
 
 const RecipePreview = (props) => {
-  const { name, category, ingredients, id, fav } = props;
+  const { name, category, ingredients, id, fav, cookTime } = props;
   const navigate = useNavigate();
   const { setSingleRecipeID, setRecipeData } = React.useContext(Context);
 
@@ -19,8 +19,6 @@ const RecipePreview = (props) => {
   };
 
   const handleDelete = () => {
-    console.log(id);
-
     deleteRecipe(id, setRecipeData);
   };
 
@@ -40,13 +38,14 @@ const RecipePreview = (props) => {
     }
   };
 
-  const favImg = isFav ? images.favIconSolid : images.favIconEmpty;
+  const favImg = fav ? images.favIconSolid : images.favIconEmpty;
 
   return (
     <StyledRecipePreview>
       <img src={favImg} alt="" onClick={handleFavoriteClick} />
       <p className="name">{name}</p>
       <p className="category">{category}</p>
+      <p className="cook-time">{cookTime}</p>
 
       <p className="ingredients">{ingredients[0]}</p>
       <p className="ingredients">{ingredients[1]}</p>

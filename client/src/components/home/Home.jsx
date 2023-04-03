@@ -46,6 +46,7 @@ const Home = () => {
             category={recipe.category}
             ingredients={recipe.ingredients.slice(0, 3)}
             fav={recipe.favorite}
+            cookTime={recipe.cookTime}
           />
         );
       })

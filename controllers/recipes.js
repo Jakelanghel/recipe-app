@@ -10,7 +10,6 @@ const getAllRecipes = asyncWrapper(async (req, res, next) => {
 
   if (sortParam) {
     const sortCriteria = getSortCriteria(sortParam);
-    console.log(sortCriteria);
     recipes = await Recipe.find().sort(sortCriteria);
   } else {
     // No sort parameter, return all recipes

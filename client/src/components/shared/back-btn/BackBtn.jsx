@@ -10,14 +10,10 @@ const BackBtn = () => {
   }
 
   return (
-    <button onClick={handleClick}>
+    <button onClick={handleClick} className="back-btn">
       <img className="back-img" src={images.backIcon} alt="go back" />
     </button>
   );
 };
 
 export default BackBtn;
-
-function MyComponent() {
-  return <button onClick={handleClick}>Go Back</button>;
-}
