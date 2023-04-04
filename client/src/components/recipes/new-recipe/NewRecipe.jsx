@@ -1,12 +1,10 @@
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { StyledNewRecipe } from "./NewRecipe.Styled";
-import { addIngredient } from "./new-recipe-functions/addIngredient";
-import { addInstruction } from "./new-recipe-functions/addInstruction";
-import { createNewRecipe } from "./new-recipe-functions/createNewRecipe";
 import BackBtn from "../../shared/back-btn/BackBtn";
 import CookTimeInput from "./cook-time-input/CookTimeInput";
 
-import { useNavigate } from "react-router-dom";
+import * as utils from "./new-recipe-functions/index";
 
 const NewRecipe = () => {
   const nameRef = useRef();
@@ -16,6 +14,17 @@ const NewRecipe = () => {
   const ingredientRef = useRef();
   const instructionRef = useRef();
   const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const totalCookTimeMins = utils.getTotalMins(cookTimeRefHr, cookTimeRefMin);
+    const recipeObj = utils.createRecipeObj(
+      nameRef,
+      categoryRef,
+      totalCookTimeMins
+    );
+    utils.postRecipe(recipeObj, navigate);
+  };
 
   return (
     <StyledNewRecipe>
@@ -48,7 +57,7 @@ const NewRecipe = () => {
           />
           <button
             className="ingredient-btn"
-            onClick={(e) => addIngredient(e, ingredientRef)}
+            onClick={(e) => utils.addIngredient(e, ingredientRef)}
           >
             Add
           </button>
@@ -69,7 +78,7 @@ const NewRecipe = () => {
           />
           <button
             className="instruction-btn"
-            onClick={(e) => addInstruction(e, instructionRef)}
+            onClick={(e) => utils.addInstruction(e, instructionRef)}
           >
             Add instruction
           </button>
@@ -79,19 +88,7 @@ const NewRecipe = () => {
           <ol className="instruction-list"></ol>
         </div>
 
-        <button
-          className="submit-btn"
-          onClick={(e) =>
-            createNewRecipe({
-              e,
-              nameRef,
-              categoryRef,
-              cookTimeRefHr,
-              cookTimeRefMin,
-              navigate,
-            })
-          }
-        >
+        <button className="submit-btn" onClick={(e) => handleSubmit(e)}>
           Add recipe
         </button>
 
