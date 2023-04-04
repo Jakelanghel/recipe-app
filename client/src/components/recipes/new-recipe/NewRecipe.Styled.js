@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const StyledNewRecipe = styled.div`
   width: 100%;
-
+  position: relative;
+  z-index: 0;
   form {
     display: flex;
     flex-direction: column;
@@ -77,5 +78,12 @@ export const StyledNewRecipe = styled.div`
     width: 150px;
     padding: 0.5rem 0;
     margin: 0 auto;
+  }
+
+  .error {
+    position: absolute;
+    font-size: 0.75rem;
+    top: 6px;
+    left: 1rem;
   }
 `;

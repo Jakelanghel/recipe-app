@@ -8,4 +8,5 @@ export const StyledSidebar = styled.div`
   padding: 1rem;
   background-color: white;
   height: 100vh;
+  z-index: 1;
 `;

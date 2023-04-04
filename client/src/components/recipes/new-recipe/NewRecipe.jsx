@@ -1,8 +1,9 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { StyledNewRecipe } from "./NewRecipe.Styled";
 import BackBtn from "../../shared/back-btn/BackBtn";
 import CookTimeInput from "./cook-time-input/CookTimeInput";
+import { StyledErrorMsg } from "./error-msg/ErrorMsg.Styled";
 
 import * as utils from "./new-recipe-functions/index";
 
@@ -15,6 +16,8 @@ const NewRecipe = () => {
   const instructionRef = useRef();
   const navigate = useNavigate();
 
+  const [error, setError] = useState(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const totalCookTimeMins = utils.getTotalMins(cookTimeRefHr, cookTimeRefMin);
@@ -23,11 +26,13 @@ const NewRecipe = () => {
       categoryRef,
       totalCookTimeMins
     );
-    utils.postRecipe(recipeObj, navigate);
+    utils.postRecipe(recipeObj, navigate, setError);
   };
+  const errorMsg = "name, ingredients, and instructions are required.";
 
   return (
-    <StyledNewRecipe>
+    <StyledNewRecipe className="new-recipe">
+      {error ? <p className="error">{errorMsg}</p> : null}
       <form action="">
         <label htmlFor="recipeTitle">Recipe Name</label>
         <input
