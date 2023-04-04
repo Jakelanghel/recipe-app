@@ -36,7 +36,7 @@ const NewRecipe = () => {
           ref={categoryRef}
         />
 
-        <CookTimeInput />
+        <CookTimeInput hrsRef={cookTimeRefHr} minsRef={cookTimeRefMin} />
 
         <label htmlFor="ingredients">Ingredients</label>
         <div className="container-flex">
@@ -82,14 +82,14 @@ const NewRecipe = () => {
         <button
           className="submit-btn"
           onClick={(e) =>
-            createNewRecipe(
+            createNewRecipe({
               e,
               nameRef,
               categoryRef,
               cookTimeRefHr,
               cookTimeRefMin,
-              navigate
-            )
+              navigate,
+            })
           }
         >
           Add recipe

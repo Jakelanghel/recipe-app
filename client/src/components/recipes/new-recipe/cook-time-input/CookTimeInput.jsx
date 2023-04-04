@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { StyledCookTimeInput } from "./CookTimeInput.Styled";
 
-const CookTimeInput = () => {
+const CookTimeInput = (props) => {
   const [cookTimeHr, setCookTimeHr] = useState("");
   const [cookTimeMin, setCookTimeMin] = useState("");
+
+  const { hrsRef, minsRef } = props;
 
   const HandleHrChange = (e) => {
     // replace any non-digit character with an empty string
@@ -29,6 +31,7 @@ const CookTimeInput = () => {
               inputMode="numeric"
               value={cookTimeHr}
               onChange={HandleHrChange}
+              ref={hrsRef}
             />
           </div>
         </div>
@@ -42,6 +45,7 @@ const CookTimeInput = () => {
               inputMode="numeric"
               value={cookTimeMin}
               onChange={HandleMinChange}
+              ref={minsRef}
             />
           </div>
         </div>
