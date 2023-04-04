@@ -21,9 +21,16 @@ export const StyledCookTimeInput = styled.div`
   .container-input {
     display: flex;
     align-items: center;
+    gap: 0.5rem;
   }
 
   input {
     width: 65px;
+    padding: 0.5rem 0;
+  }
+
+  .container-actions {
+    display: flex;
+    flex-direction: column;
   }
 `;

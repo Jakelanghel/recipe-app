@@ -36,33 +36,8 @@ const NewRecipe = () => {
           ref={categoryRef}
         />
 
-        <label htmlFor="cookTime">Cook time</label>
-        {/* <input
-          type="text"
-          id="cookTime"
-          placeholder="Cook time..."
-          ref={cookTimeRef}
-        /> */}
-
-        {/* <div className="container-cook-time">
-          <label htmlFor="cookTimeHr">hrs:</label>
-          <input
-            type="number"
-            className="num-input cook-time-hr"
-            id="cookTimeHr"
-            ref={cookTimeRefHr}
-          />
-          <label htmlFor="cookTimeMin">mins:</label>
-
-          <input
-            type="number"
-            className="num-input cook-time-min"
-            id="cookTimeMin"
-            ref={cookTimeRefMin}
-          />
-        </div> */}
-
         <CookTimeInput />
+
         <label htmlFor="ingredients">Ingredients</label>
         <div className="container-flex">
           <input

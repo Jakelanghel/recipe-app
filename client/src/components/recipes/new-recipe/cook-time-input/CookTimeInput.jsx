@@ -2,25 +2,34 @@ import React, { useState } from "react";
 import { StyledCookTimeInput } from "./CookTimeInput.Styled";
 
 const CookTimeInput = () => {
-  const [cookTimeHr, setCookTimeHr] = useState(0);
-  const [cookTimeMin, setCookTimeMin] = useState(0);
+  const [cookTimeHr, setCookTimeHr] = useState("");
+  const [cookTimeMin, setCookTimeMin] = useState("");
+
+  const HandleHrChange = (e) => {
+    // replace any non-digit character with an empty string
+    const newValue = e.target.value.replace(/\D/, "");
+    setCookTimeHr(newValue);
+  };
 
   const HandleMinChange = (e) => {
-    setCookTimeMin(e.target.value);
-  };
-  const HandleHrChange = (e) => {
-    setCookTimeHr(e.target.value);
+    const newValue = e.target.value.replace(/\D/, "");
+    setCookTimeMin(newValue);
   };
 
   return (
     <StyledCookTimeInput>
-      <h3>cook time</h3>
+      <label htmlFor="cookTime">Cook time</label>
 
       <div className="container-flex parent">
         <div className="container-flex hrs">
           <p>hrs:</p>
           <div className="container-input">
-            <input type="text" value={cookTimeHr} onChange={HandleMinChange} />
+            <input
+              type="text"
+              inputMode="numeric"
+              value={cookTimeHr}
+              onChange={HandleHrChange}
+            />
           </div>
         </div>
 
@@ -28,7 +37,12 @@ const CookTimeInput = () => {
           <p>mins:</p>
 
           <div className="container-input">
-            <input type="text" value={cookTimeMin} onChange={HandleHrChange} />
+            <input
+              type="text"
+              inputMode="numeric"
+              value={cookTimeMin}
+              onChange={HandleMinChange}
+            />
           </div>
         </div>
       </div>
