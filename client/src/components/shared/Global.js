@@ -12,6 +12,7 @@ export const GlobalStyles = createGlobalStyle`
     body {
         margin: 0;
         padding: 0;
+        height: 100vh;
     }
 
     img {
@@ -21,7 +22,10 @@ export const GlobalStyles = createGlobalStyle`
     .container-app {
         position: relative;
         padding-bottom: 2rem;
+        min-height: 100vh;
+
     }
+
 
     .no-scroll {
         overflow: hidden;
