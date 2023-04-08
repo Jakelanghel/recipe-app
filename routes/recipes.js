@@ -9,6 +9,7 @@ const {
   deleteRecipe,
   updateFavorite,
   getFavoriteRecipes,
+  SearchRecipes,
 } = require("../controllers/recipes");
 
 router.route("/").get(getAllRecipes).post(createRecipe);

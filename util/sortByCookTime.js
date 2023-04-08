@@ -1,4 +1,4 @@
-const sortRecipes = (recipes) => {
+const sortByCookTime = (recipes) => {
   return recipes.sort((recipe1, recipe2) => {
     const cookTime1 = recipe1.cookTime;
     const cookTime2 = recipe2.cookTime;
@@ -6,4 +6,4 @@ const sortRecipes = (recipes) => {
   });
 };
 
-module.exports = { sortRecipes };
+module.exports = { sortByCookTime };

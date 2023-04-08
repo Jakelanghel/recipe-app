@@ -28,7 +28,6 @@ const Home = () => {
     e.target.classList.add("active");
 
     try {
-      console.log(sortParam);
       const response = await fetch(`/api/v1/recipes?sort=${sortParam}`);
       const data = await response.json();
       setRecipeData(data.data);
@@ -37,21 +36,25 @@ const Home = () => {
     }
   };
 
-  const previewElements = recipeData
-    ? recipeData.map((recipe) => {
-        return (
-          <RecipePreview
-            key={recipe._id}
-            id={recipe._id}
-            name={recipe.name}
-            category={recipe.category}
-            ingredients={recipe.ingredients.slice(0, 3)}
-            fav={recipe.favorite}
-            cookTime={recipe.cookTime}
-          />
-        );
-      })
-    : null;
+  let previewElements = <h1>Loading...</h1>;
+
+  if (recipeData) {
+    console.log(recipeData);
+    previewElements = recipeData.map((recipe) => {
+      return (
+        <RecipePreview
+          key={recipe._id}
+          id={recipe._id}
+          name={recipe.name}
+          category={recipe.category}
+          ingredients={recipe.ingredients.slice(0, 3)}
+          fav={recipe.favorite}
+          cookTime={recipe.cookTime}
+        />
+      );
+    });
+  }
+
   return (
     <StyledHome>
       <SortBtns handleSort={handleSort} />
