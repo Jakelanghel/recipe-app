@@ -1,7 +1,7 @@
-import React, { useState, useRef } from "react";
-import { ContainerSearchBar } from "./ContainerSearchBar";
-import { images } from "../../../constants/images";
+import React, { useRef } from "react";
 import { Context } from "../../../Context";
+import { images } from "../../../constants/images";
+import { ContainerSearchBar } from "./ContainerSearchBar";
 
 const SearchBar = () => {
   const { setRecipeData } = React.useContext(Context);
@@ -23,7 +23,7 @@ const SearchBar = () => {
     <ContainerSearchBar>
       <label htmlFor="searchInput"></label>
       <button onClick={handleSearch}>
-        <img src={images.search} alt="Search img" onClick={handleSearch} />
+        <img src={images.search} alt="Search img" />
       </button>
       <input
         type="text"

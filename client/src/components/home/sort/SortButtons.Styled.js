@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledSortBtns = styled.div`
+export const StyledSortButtons = styled.div`
   margin: 1rem 0;
   text-align: center;
 
