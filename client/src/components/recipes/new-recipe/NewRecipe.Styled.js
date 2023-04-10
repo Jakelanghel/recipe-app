@@ -14,12 +14,16 @@ export const StyledNewRecipe = styled.div`
   label {
     display: flex;
     flex-direction: column;
+    font-size: 1.25rem;
+    font-weight: 900;
+    margin-top: 1rem;
   }
 
   input,
   textarea {
     font-size: 1rem;
     border-radius: 5px;
+    padding: 0.5rem;
   }
 
   .txt-input,
@@ -85,5 +89,19 @@ export const StyledNewRecipe = styled.div`
     font-size: 0.75rem;
     top: 6px;
     left: 1rem;
+  }
+
+  button {
+    font-size: 1rem;
+    text-transform: capitalize;
+    border: none;
+    background-color: ${({ theme }) => theme.darkBlue};
+    color: ${({ theme }) => theme.primaryBG};
+    border: none;
+    border-radius: 5px;
+  }
+
+  .back-btn {
+    background-color: transparent;
   }
 `;

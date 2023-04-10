@@ -8,7 +8,7 @@ const SortButtons = () => {
 
   return (
     <StyledSortButtons>
-      <h2>Sort by</h2>
+      <p>sort by</p>
 
       <div className="container-btns">
         <button

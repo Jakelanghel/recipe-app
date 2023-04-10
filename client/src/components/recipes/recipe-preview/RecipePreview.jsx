@@ -24,7 +24,6 @@ const RecipePreview = (props) => {
   };
 
   const handleFavoriteClick = async () => {
-    console.log("X");
     try {
       const response = await fetch(`/api/v1/recipes/${id}/favorite`, {
         method: "PATCH",
@@ -46,16 +45,26 @@ const RecipePreview = (props) => {
   return (
     <StyledRecipePreview>
       <img src={favImg} alt="" onClick={handleFavoriteClick} />
-      <p className="name">{name}</p>
-      <p className="category">{category}</p>
-      <p className="cook-time">{cookTimeString}</p>
+      <h2 className="name">{name}</h2>
 
-      <p className="ingredients">{ingredients[0]}</p>
-      <p className="ingredients">{ingredients[1]}</p>
-      <p className="ingredients">{ingredients[2]}</p>
+      <div className="container-details">
+        <p className="category">
+          <span>Category</span> {category}
+        </p>
+        <p className="cook-time">
+          <span>Cook time</span> {cookTimeString}
+        </p>
+      </div>
+
+      <div className="container-ingredients">
+        <h3>Ingredients</h3>
+        <p className="ingredients">- {ingredients[0]}</p>
+        <p className="ingredients">- {ingredients[1]}</p>
+        <p className="ingredients">- {ingredients[2]}...</p>
+      </div>
 
       <div className="container-actions">
-        <button onClick={showFullRecipe}>see full recipe</button>
+        <button onClick={showFullRecipe}> full recipe</button>
         <button onClick={handleDelete}>delete</button>
       </div>
     </StyledRecipePreview>

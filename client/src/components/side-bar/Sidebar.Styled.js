@@ -6,7 +6,7 @@ export const StyledSidebar = styled.div`
   top: 75px;
   left: 0;
   padding: 1rem;
-  background-color: white;
+  background-color: ${({ theme }) => theme.primaryBG};
   height: 100vh;
   z-index: 1;
 `;

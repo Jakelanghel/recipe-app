@@ -1,6 +1,7 @@
 import RecipePreview from "../recipes/recipe-preview/RecipePreview";
 
 export const getPreviewElements = (recipeData) => {
+  console.log(recipeData);
   if (!recipeData) {
     return <h1>Loading...</h1>;
   } else if (recipeData.length === 0) {

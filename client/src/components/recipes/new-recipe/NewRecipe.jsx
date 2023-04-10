@@ -97,7 +97,7 @@ const NewRecipe = () => {
           Add recipe
         </button>
 
-        <BackBtn />
+        <BackBtn className="back-btn" />
       </form>
     </StyledNewRecipe>
   );

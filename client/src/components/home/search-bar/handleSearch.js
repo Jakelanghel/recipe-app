@@ -1,4 +1,4 @@
-export const handleSearch = async (setRecipeData) => {
+export const handleSearch = async (setRecipeData, inputRef) => {
   const search = inputRef.current.value;
   try {
     const response = await fetch(`/api/v1/recipes?search=${search}`);

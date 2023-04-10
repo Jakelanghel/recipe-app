@@ -1,23 +1,28 @@
-import React, { useState, useEffect } from "react";
-import Sidebar from "./components/side-bar/Sidebar";
+import React from "react";
 import { GlobalStyles } from "./components/shared/Global";
+import { Context } from "./Context";
+import { ThemeProvider } from "styled-components";
+import { getTheme } from "./theme/getTheme";
+
 import Header from "./components/header/Header";
 import Router from "./components/router/Router";
-import { Context } from "./Context";
+import Sidebar from "./components/side-bar/Sidebar";
 
 function App() {
-  const { sideBarOpen, newRecipeOpen, setNewRecipeOpen, setRecipeData } =
-    React.useContext(Context);
+  const { sideBarOpen, isDark } = React.useContext(Context);
+  const theme = getTheme(isDark);
 
   return (
     <>
-      <GlobalStyles />
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
 
-      <div className="container-app">
-        <Header />
-        {sideBarOpen ? <Sidebar /> : null}
-        <Router />
-      </div>
+        <div className="container-app">
+          <Header />
+          {sideBarOpen ? <Sidebar /> : null}
+          <Router />
+        </div>
+      </ThemeProvider>
     </>
   );
 }

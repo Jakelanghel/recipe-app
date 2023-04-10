@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const StyledCookTimeInput = styled.div`
   width: 100%;
 
+  label {
+    margin-bottom: 1rem;
+  }
+
   .container-flex {
     display: flex;
     align-items: center;
@@ -18,6 +22,11 @@ export const StyledCookTimeInput = styled.div`
     gap: 1rem;
   }
 
+  p {
+    text-transform: capitalize;
+    font-weight: 900;
+  }
+
   .container-input {
     display: flex;
     align-items: center;
@@ -26,7 +35,7 @@ export const StyledCookTimeInput = styled.div`
 
   input {
     width: 65px;
-    padding: 0.5rem 0;
+    padding: 0.5rem;
   }
 
   .container-actions {

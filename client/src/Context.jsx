@@ -6,6 +6,7 @@ const ContextProvider = ({ children }) => {
   const [sideBarOpen, setSideBarOpen] = useState(false);
   const [recipeData, setRecipeData] = useState(null);
   const [singleRecipeID, setSingleRecipeID] = useState(null);
+  const [isDark, setIsDark] = useState(false);
 
   const toggleSideBar = () => {
     setSideBarOpen((oldState) => !oldState);
@@ -21,6 +22,8 @@ const ContextProvider = ({ children }) => {
         toggleSideBar,
         singleRecipeID,
         setSingleRecipeID,
+        isDark,
+        setIsDark,
       }}
     >
       {children}

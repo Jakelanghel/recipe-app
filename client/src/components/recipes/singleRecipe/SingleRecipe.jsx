@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { StyledSingleRecipe } from "./SingleRecipe.Styled";
 import { Context } from "../../../Context";
+import { StyledSingleRecipe } from "./SingleRecipe.Styled";
+import { formatCookTime } from "../recipe-utils/formatCookTime";
+import { createIngredientsArr } from "./utils/createIngredientsArr";
+import { createInstructionsArr } from "./utils/createInstructionsArr";
 import BackBtn from "../../shared/back-btn/BackBtn";
 
 const SingleRecipe = () => {
   const { singleRecipeID } = React.useContext(Context);
   const [data, setData] = useState(null);
-  //   const ID = singleRecipeID ? singleRecipeID : localStorage.getItem("recipeID");
   const recipeID = singleRecipeID
     ? singleRecipeID
     : localStorage.getItem("recipeId");
@@ -24,30 +26,28 @@ const SingleRecipe = () => {
     fetchRecipes();
   }, []);
 
-  const ingredients = data
-    ? data.ingredients.map((ingredient, i) => <li key={i}>{ingredient}</li>)
-    : null;
-
-  const instructions = data
-    ? data.instructions.map((instruction, i) => <li key={i}>{instruction}</li>)
-    : null;
-
   return data ? (
     <StyledSingleRecipe>
       <header>
         <h1>{data.name}</h1>
-        <p>{data.category}</p>
-        <p>{data.cookTime}</p>
+        <div className="container-details">
+          <p className="category">
+            <span>category:</span> {data.category}
+          </p>
+          <p>
+            <span>cook time:</span> {formatCookTime(data.cookTime)}
+          </p>
+        </div>
       </header>
 
       <div className="container-ingredients">
         <h2>ingredients</h2>
-        <ul>{ingredients}</ul>
+        <ul className="instructions">{createIngredientsArr(data)}</ul>
       </div>
 
       <div className="container-instructions">
         <h2>instructions</h2>
-        <ol>{instructions}</ol>
+        <ol className="ingredients">{createInstructionsArr(data)}</ol>
       </div>
 
       <BackBtn />
