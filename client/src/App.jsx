@@ -20,6 +20,7 @@ function App() {
         <div className="container-app">
           <Header />
           {sideBarOpen ? <Sidebar /> : null}
+
           <Router />
         </div>
       </ThemeProvider>

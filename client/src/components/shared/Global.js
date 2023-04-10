@@ -33,6 +33,9 @@ export const GlobalStyles = createGlobalStyle`
 
     }
 
+    .pg-padding {
+        padding-top: 6.5rem;
+    }
 
     .no-scroll {
         overflow: hidden;
@@ -41,6 +44,7 @@ export const GlobalStyles = createGlobalStyle`
     .back-btn {
         width: 100px;
         margin: 0 auto;
+        margin-top: auto;
         padding: 1rem 0;
         display: flex;
         justify-content: center;

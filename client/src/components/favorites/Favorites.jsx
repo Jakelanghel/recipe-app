@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { StyledFavorites } from "./Favorites.Styled";
 import { Context } from "../../Context";
 import RecipePreview from "../recipes/recipe-preview/RecipePreview";
+import BackBtn from "../shared/back-btn/BackBtn";
 
 const Favorites = () => {
   const { recipeData, setRecipeData } = React.useContext(Context);
@@ -34,7 +35,14 @@ const Favorites = () => {
     <h1>Loading...</h1>
   );
 
-  return <StyledFavorites>{recipeElements}</StyledFavorites>;
+  return (
+    <main className="pg-padding">
+      <StyledFavorites>
+        {recipeElements}
+        <BackBtn />
+      </StyledFavorites>
+    </main>
+  );
 };
 
 export default Favorites;

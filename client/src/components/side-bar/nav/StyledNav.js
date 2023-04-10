@@ -7,7 +7,7 @@ export const StyledNav = styled.nav`
   gap: 1rem;
   margin-bottom: 1.5rem;
 
-  button {
+  .nav-link {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -15,9 +15,13 @@ export const StyledNav = styled.nav`
     font-weight: bold;
     text-transform: capitalize;
     padding: 1rem;
+    color: ${({ theme }) => theme.darkBlue};
+    text-decoration: none;
   }
 
   img {
     width: 25px;
+    filter: invert(28%) sepia(9%) saturate(1800%) hue-rotate(197deg)
+      brightness(95%) contrast(86%);
   }
 `;

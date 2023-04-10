@@ -1,30 +1,35 @@
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
 import { StyledShoppingList } from "./ShoppingList.Styled";
 
 const ShoppingList = () => {
   const inputRef = useRef();
+  const [items, setItems] = useState([]);
 
-  const addToList = () => {
-    const item = inputRef.current.value;
-    const listItem = document.createElement("li");
-    listItem.textContent = item;
-    const list = document.getElementById("shoppingList");
-    document.getElementById("shoppingList").appendChild(listItem);
+  const addToList = (event) => {
+    event.preventDefault();
+    setItems((oldState) => [...oldState, inputRef.current.value]);
     inputRef.current.value = "";
   };
+
+  const shoppingListElements = (
+    <ul>
+      {items.map((item, i) => (
+        <li key={i}>{item}</li>
+      ))}
+    </ul>
+  );
+
   return (
-    <StyledShoppingList>
-      <label htmlFor="shoppingListInput">shopping list</label>
-
-      <div className="container-input">
-        <input type="text" id="shoppingListInput" ref={inputRef} />
-        <button onClick={addToList}>add</button>
-      </div>
-
-      <div className="container-shopping-list">
-        <ul id="shoppingList"></ul>
-      </div>
-    </StyledShoppingList>
+    <main className="pg-padding">
+      <StyledShoppingList>
+        <label htmlFor="shoppingListInput">Shopping List</label>
+        <form onSubmit={addToList}>
+          <input type="text" id="shoppingListInput" ref={inputRef} />
+          <button type="submit">Add</button>
+        </form>
+        <div className="container-shopping-list">{shoppingListElements}</div>
+      </StyledShoppingList>
+    </main>
   );
 };
 

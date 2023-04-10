@@ -25,11 +25,13 @@ const Home = () => {
   const previewElements = getPreviewElements(recipeData);
 
   return (
-    <StyledHome>
-      <SortButtons />
-      <SearchBar />
-      {previewElements}
-    </StyledHome>
+    <main className="pg-padding">
+      <StyledHome>
+        <SortButtons />
+        <SearchBar />
+        {previewElements}
+      </StyledHome>
+    </main>
   );
 };
 

@@ -12,19 +12,19 @@ const Nav = () => {
   };
   return (
     <StyledNav>
-      <NavLink to="/" onClick={handleClick}>
+      <NavLink to="/" className="nav-link" onClick={handleClick}>
         <img src={images.homeIcon} alt="home" />
         Home
       </NavLink>
-      <NavLink to="/new-recipe" onClick={handleClick}>
+      <NavLink to="/new-recipe" className="nav-link" onClick={handleClick}>
         <img src={images.plusIcon} alt="new recipe" />
         New recipe
       </NavLink>
-      <NavLink to="/favorites" onClick={handleClick}>
+      <NavLink to="/favorites" className="nav-link" onClick={handleClick}>
         <img src={images.heartIcon} alt="favorites" />
         favorites
       </NavLink>
-      <NavLink to="/shopping-list" onClick={handleClick}>
+      <NavLink to="/shopping-list" className="nav-link" onClick={handleClick}>
         <img src={images.listIcon} alt="shopping list" />
         Shopping list
       </NavLink>
