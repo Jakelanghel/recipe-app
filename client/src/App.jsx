@@ -4,6 +4,8 @@ import { Context } from "./Context";
 import { ThemeProvider } from "styled-components";
 import { getTheme } from "./theme/getTheme";
 
+import { motion, AnimatePresence } from "framer-motion";
+
 import Header from "./components/header/Header";
 import Router from "./components/router/Router";
 import Sidebar from "./components/side-bar/Sidebar";
@@ -19,8 +21,9 @@ function App() {
 
         <div className="container-app">
           <Header />
-          {sideBarOpen ? <Sidebar /> : null}
-
+          <AnimatePresence mode="wait">
+            {sideBarOpen ? <Sidebar /> : null}
+          </AnimatePresence>
           <Router />
         </div>
       </ThemeProvider>
