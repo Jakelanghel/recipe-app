@@ -7,6 +7,11 @@ export const StyledNav = styled.nav`
   gap: 1rem;
   margin-bottom: 1.5rem;
 
+  .close-icon {
+    width: 55px;
+    padding: 1rem;
+  }
+
   .nav-link {
     display: flex;
     align-items: center;

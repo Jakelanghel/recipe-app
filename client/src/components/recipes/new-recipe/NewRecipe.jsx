@@ -5,7 +5,7 @@ import BackBtn from "../../shared/back-btn/BackBtn";
 import CookTimeInput from "./cook-time-input/CookTimeInput";
 import { StyledErrorMsg } from "./error-msg/ErrorMsg.Styled";
 
-import * as utils from "./new-recipe-functions/index";
+import * as utils from "./new-recipe-utils/index";
 
 const NewRecipe = () => {
   const nameRef = useRef();
@@ -22,23 +22,36 @@ const NewRecipe = () => {
 
   const addIngredient = (e) => {
     e.preventDefault();
-    utils.addIngredient(e);
+    setIngredients((oldState) => [...oldState, ingredientRef.current.value]);
   };
+
   const addInstruction = (e) => {
     e.preventDefault();
-    utils.addInstruction(e);
+    setInstructions((oldState) => [...oldState, instructionRef.current.value]);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const totalCookTimeMins = utils.getTotalMins(cookTimeRefHr, cookTimeRefMin);
-    const recipeObj = utils.createRecipeObj(
-      nameRef,
-      categoryRef,
-      totalCookTimeMins
-    );
-    utils.postRecipe(recipeObj, navigate, setError);
+    console.log(ingredients);
+    console.log(instructions);
+    const newRecipe = {
+      name: nameRef.current.value,
+      category: categoryRef.current.value,
+      cookTime: totalCookTimeMins,
+      ingredients: ingredients,
+      instructions: instructions,
+    };
+    utils.postRecipe(newRecipe, navigate, setError);
   };
+
+  const ingredientElements = ingredients.map((ingredient, i) => (
+    <li key={i}>{ingredient}</li>
+  ));
+
+  const instructionElements = instructions.map((instruction, i) => (
+    <li key={i}>{instruction}</li>
+  ));
 
   const errorMsg = "name, ingredients, and instructions are required.";
 
@@ -73,13 +86,13 @@ const NewRecipe = () => {
               placeholder="Add ingredient..."
               ref={ingredientRef}
             />
-            <button className="ingredient-btn" onClick={addInstruction}>
+            <button className="ingredient-btn" onClick={addIngredient}>
               Add
             </button>
           </div>
 
           <div className="container-flex">
-            <ul className="ingredients-list"></ul>
+            <ul className="ingredients-list">{ingredientElements}</ul>
           </div>
 
           <label htmlFor="instructions">Instructions</label>
@@ -97,10 +110,10 @@ const NewRecipe = () => {
           </div>
 
           <div className="container-flex">
-            <ol className="instruction-list"></ol>
+            <ol className="instruction-list">{instructionElements}</ol>
           </div>
 
-          <button className="submit-btn" onClick={(e) => handleSubmit(e)}>
+          <button className="submit-btn" onClick={handleSubmit}>
             Add recipe
           </button>
 

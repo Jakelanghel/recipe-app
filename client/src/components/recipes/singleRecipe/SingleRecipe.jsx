@@ -27,33 +27,37 @@ const SingleRecipe = () => {
   }, []);
 
   return data ? (
-    <StyledSingleRecipe>
-      <header>
-        <h1>{data.name}</h1>
-        <div className="container-details">
-          <p className="category">
-            <span>category:</span> {data.category}
-          </p>
-          <p>
-            <span>cook time:</span> {formatCookTime(data.cookTime)}
-          </p>
+    <main className="pg-padding">
+      <StyledSingleRecipe>
+        <header>
+          <h1>{data.name}</h1>
+          <div className="container-details">
+            <p className="category">
+              <span>category:</span> {data.category}
+            </p>
+            <p>
+              <span>cook time:</span> {formatCookTime(data.cookTime)}
+            </p>
+          </div>
+        </header>
+
+        <div className="container-ingredients">
+          <h2>ingredients</h2>
+          <ul className="instructions">{createIngredientsArr(data)}</ul>
         </div>
-      </header>
 
-      <div className="container-ingredients">
-        <h2>ingredients</h2>
-        <ul className="instructions">{createIngredientsArr(data)}</ul>
-      </div>
+        <div className="container-instructions">
+          <h2>instructions</h2>
+          <ol className="ingredients">{createInstructionsArr(data)}</ol>
+        </div>
 
-      <div className="container-instructions">
-        <h2>instructions</h2>
-        <ol className="ingredients">{createInstructionsArr(data)}</ol>
-      </div>
-
-      <BackBtn />
-    </StyledSingleRecipe>
+        <BackBtn />
+      </StyledSingleRecipe>
+    </main>
   ) : (
-    <h1>loading...</h1>
+    <main>
+      <h1 className="pg-padding">loading...</h1>
+    </main>
   );
 };
 

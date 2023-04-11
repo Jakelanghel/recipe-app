@@ -12,6 +12,12 @@ const Nav = () => {
   };
   return (
     <StyledNav>
+      <img
+        src={images.closeIcon}
+        alt=""
+        className="close-icon"
+        onClick={handleClick}
+      />
       <NavLink to="/" className="nav-link" onClick={handleClick}>
         <img src={images.homeIcon} alt="home" />
         Home

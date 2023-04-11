@@ -46,7 +46,7 @@ const createRecipe = asyncWrapper(async (req, res) => {
   res.status(200).json({ recipe });
 });
 
-const updateRecipe = asyncWrapper(async (req, res) => {
+const updateRecipe = asyncWrapper(async (req, res, next) => {
   const { id: recipeID } = req.params;
   const recipe = await Recipe.findOneAndUpdate({ _id: recipeID }, req.body, {
     new: true,
@@ -73,7 +73,7 @@ const updateFavorite = asyncWrapper(async (req, res) => {
   }
 });
 
-const deleteRecipe = asyncWrapper(async (req, res) => {
+const deleteRecipe = asyncWrapper(async (req, res, next) => {
   const { id: recipeID } = req.params;
   const recipe = await Recipe.findOneAndDelete({ _id: recipeID });
   if (!recipe) {

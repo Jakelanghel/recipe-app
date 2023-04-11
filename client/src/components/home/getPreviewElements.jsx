@@ -1,24 +1,26 @@
 import RecipePreview from "../recipes/recipe-preview/RecipePreview";
 
+const Loading = () => <h1>Loading...</h1>;
+const NoRecipes = () => <h1>No Recipes matched your search query!</h1>;
+
 export const getPreviewElements = (recipeData) => {
-  console.log(recipeData);
   if (!recipeData) {
-    return <h1>Loading...</h1>;
+    return <Loading />;
   } else if (recipeData.length === 0) {
-    return <h1>No Recipes matched your search query!</h1>;
+    return <NoRecipes />;
   } else {
-    return recipeData.map((recipe) => {
-      return (
+    return recipeData.map(
+      ({ _id, name, category, ingredients, favorite, cookTime }) => (
         <RecipePreview
-          key={recipe._id}
-          id={recipe._id}
-          name={recipe.name}
-          category={recipe.category}
-          ingredients={recipe.ingredients.slice(0, 3)}
-          fav={recipe.favorite}
-          cookTime={recipe.cookTime}
+          key={_id}
+          id={_id}
+          name={name}
+          category={category}
+          ingredients={ingredients.slice(0, 3)}
+          fav={favorite}
+          cookTime={cookTime}
         />
-      );
-    });
+      )
+    );
   }
 };

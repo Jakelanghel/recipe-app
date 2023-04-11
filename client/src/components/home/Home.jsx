@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { Context } from "../../Context";
 import { StyledHome } from "./Home.Styled";
-import RecipePreview from "../recipes/recipe-preview/RecipePreview";
 import SearchBar from "./search-bar/SearchBar";
 import SortButtons from "./sort/SortButtons";
 import { getPreviewElements } from "./getPreviewElements";

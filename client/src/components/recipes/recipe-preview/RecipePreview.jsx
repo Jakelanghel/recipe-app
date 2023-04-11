@@ -42,6 +42,12 @@ const RecipePreview = (props) => {
   const favImg = isFav ? images.favIconSolid : images.favIconEmpty;
   const cookTimeString = formatCookTime(cookTime);
 
+  const ingredientElements = ingredients.map((ingredient, i) => (
+    <p key={i} className="ingredients">
+      - {ingredient}
+    </p>
+  ));
+
   return (
     <StyledRecipePreview>
       <img src={favImg} alt="" onClick={handleFavoriteClick} />
@@ -58,9 +64,7 @@ const RecipePreview = (props) => {
 
       <div className="container-ingredients">
         <h3>Ingredients</h3>
-        <p className="ingredients">- {ingredients[0]}</p>
-        <p className="ingredients">- {ingredients[1]}</p>
-        <p className="ingredients">- {ingredients[2]}...</p>
+        {ingredientElements}
       </div>
 
       <div className="container-actions">

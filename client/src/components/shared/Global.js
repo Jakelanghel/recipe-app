@@ -41,12 +41,6 @@ export const GlobalStyles = createGlobalStyle`
         overflow: hidden;
     }
 
-    .container-recipes {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-        padding: 2rem;
-    }
 
     .back-btn {
         width: 100px;
@@ -67,5 +61,14 @@ export const GlobalStyles = createGlobalStyle`
 
     .filter-blue {
         filter: invert(28%) sepia(9%) saturate(1800%) hue-rotate(197deg) brightness(95%) contrast(86%);
+    }
+
+    @media screen and (min-width: 825px) {
+        .container-recipes {
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
     }
 `;
