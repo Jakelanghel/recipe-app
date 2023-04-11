@@ -29,7 +29,7 @@ const Home = () => {
       <StyledHome>
         <SortButtons />
         <SearchBar />
-        {previewElements}
+        <div className="container-recipes">{previewElements}</div>
       </StyledHome>
     </main>
   );

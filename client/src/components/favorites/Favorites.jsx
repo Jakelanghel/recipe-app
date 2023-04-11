@@ -38,7 +38,7 @@ const Favorites = () => {
   return (
     <main className="pg-padding">
       <StyledFavorites>
-        {recipeElements}
+        <div className="container-recipes">{recipeElements}</div>
         <BackBtn />
       </StyledFavorites>
     </main>

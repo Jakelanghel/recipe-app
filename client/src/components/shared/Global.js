@@ -41,6 +41,13 @@ export const GlobalStyles = createGlobalStyle`
         overflow: hidden;
     }
 
+    .container-recipes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        padding: 2rem;
+    }
+
     .back-btn {
         width: 100px;
         margin: 0 auto;

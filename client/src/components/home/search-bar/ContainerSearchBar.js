@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const ContainerSearchBar = styled.form`
   width: 95%;
+  max-width: 600px;
   display: flex;
   margin-bottom: 1.5rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -16,7 +17,6 @@ export const ContainerSearchBar = styled.form`
   button {
     background-color: transparent;
     border: none;
-    /* border: solid 1px ${({ theme }) => theme.darkBlue}; */
     border-radius: 5px;
     padding: 0.5rem 0.75rem;
     background-color: ${({ theme }) => theme.darkBlue};
