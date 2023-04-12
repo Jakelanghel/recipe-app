@@ -1,4 +1,4 @@
-export const navVariants = {
+export const sideBarVariants = {
   open: {
     opacity: 1,
     x: 0,
