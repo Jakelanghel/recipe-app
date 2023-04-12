@@ -1,3 +1,4 @@
+const Recipe = require("../models/Recipe");
 const asyncWrapper = require("../middleware/async-wrapper");
 
 const createRecipe = asyncWrapper(async (req, res) => {

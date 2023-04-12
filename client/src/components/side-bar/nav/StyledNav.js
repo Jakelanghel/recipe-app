@@ -4,7 +4,7 @@ export const StyledNav = styled.nav`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
   margin-bottom: 1.5rem;
 
   .close-icon {
