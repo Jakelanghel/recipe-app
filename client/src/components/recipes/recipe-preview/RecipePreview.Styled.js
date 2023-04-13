@@ -21,7 +21,7 @@ export const StyledRecipePreview = styled.div`
 
   .name {
     margin: 1rem 2rem;
-    border-bottom: solid 2px ${({ theme }) => theme.darkBlue};
+    border-bottom: solid 2px ${({ theme }) => theme.primaryTxt};
   }
 
   .container-details {
@@ -56,7 +56,7 @@ export const StyledRecipePreview = styled.div`
     font-size: 1rem;
     text-transform: capitalize;
     padding: 0.75rem 1.25rem;
-    background-color: ${({ theme }) => theme.darkBlue};
+    background-color: ${({ theme }) => theme.primaryTxt};
     color: ${({ theme }) => theme.primaryBG};
     border: none;
     border-radius: 5px;

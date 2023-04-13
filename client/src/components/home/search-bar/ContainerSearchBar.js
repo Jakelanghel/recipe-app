@@ -19,7 +19,7 @@ export const ContainerSearchBar = styled.form`
     border: none;
     border-radius: 5px;
     padding: 0.5rem 0.75rem;
-    background-color: ${({ theme }) => theme.darkBlue};
+    background-color: ${({ theme }) => theme.primaryTxt};
   }
 
   img {

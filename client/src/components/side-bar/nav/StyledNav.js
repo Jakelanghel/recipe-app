@@ -20,13 +20,11 @@ export const StyledNav = styled.nav`
     font-weight: bold;
     text-transform: capitalize;
     padding: 1rem;
-    color: ${({ theme }) => theme.darkBlue};
+    color: ${({ theme }) => theme.primaryTxt};
     text-decoration: none;
   }
 
   img {
     width: 25px;
-    filter: invert(28%) sepia(9%) saturate(1800%) hue-rotate(197deg)
-      brightness(95%) contrast(86%);
   }
 `;

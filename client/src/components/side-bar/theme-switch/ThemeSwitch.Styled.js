@@ -16,13 +16,14 @@ export const StyledThemeSwitch = styled.div`
     text-transform: capitalize;
     border: none;
     background-color: transparent;
+    color: ${({ theme }) => theme.primaryTxt};
   }
 
   .slider {
     width: 75px;
     height: 35px;
     border-radius: 20px;
-    background-color: ${({ theme }) => theme.darkBlue};
+    background-color: ${({ theme }) => theme.primaryTxt};
     display: flex;
     align-items: center;
     padding: 5px;

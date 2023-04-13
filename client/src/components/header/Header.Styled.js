@@ -7,7 +7,7 @@ export const StyledHeader = styled.header`
   z-index: 1;
 
   .container {
-    width: 55%;
+    width: 53%;
     display: flex;
     justify-content: space-between;
   }

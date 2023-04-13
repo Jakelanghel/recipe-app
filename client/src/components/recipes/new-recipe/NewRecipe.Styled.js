@@ -42,8 +42,11 @@ export const StyledNewRecipe = styled.div`
 
   .container-flex {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+  }
+
+  .ingredients {
+    gap: 3rem;
   }
 
   .container-cook-time {
@@ -98,7 +101,7 @@ export const StyledNewRecipe = styled.div`
     font-size: 1rem;
     text-transform: capitalize;
     border: none;
-    background-color: ${({ theme }) => theme.darkBlue};
+    background-color: ${({ theme }) => theme.primaryTxt};
     color: ${({ theme }) => theme.primaryBG};
     border: none;
     border-radius: 5px;

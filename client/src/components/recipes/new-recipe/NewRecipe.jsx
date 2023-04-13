@@ -79,7 +79,7 @@ const NewRecipe = () => {
           <CookTimeInput hrsRef={cookTimeRefHr} minsRef={cookTimeRefMin} />
 
           <label htmlFor="ingredients">Ingredients</label>
-          <div className="container-flex">
+          <div className="container-flex ingredients">
             <input
               type="text"
               id="ingredients"

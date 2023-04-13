@@ -19,7 +19,7 @@ export const GlobalStyles = createGlobalStyle`
         padding: 0;
         height: 100vh;
         background-color: ${({ theme }) => theme.primaryBG}; 
-        color:  ${({ theme }) => theme.darkBlue};
+        color:  ${({ theme }) => theme.primaryTxt};
     }
 
     img {
@@ -39,6 +39,15 @@ export const GlobalStyles = createGlobalStyle`
 
     .no-scroll {
         overflow: hidden;
+    }
+
+    .filter-blue {
+        filter: invert(28%) sepia(9%) saturate(1800%) hue-rotate(197deg)
+        brightness(95%) contrast(86%);
+    }
+
+    .filter-white {
+        filter: invert(99%) sepia(2%) saturate(100%) hue-rotate(221deg) brightness(119%) contrast(100%);
     }
 
 
@@ -67,6 +76,7 @@ export const GlobalStyles = createGlobalStyle`
         .container-recipes {
             padding: 2rem;
             display: flex;
+            justify-content: center;
             flex-wrap: wrap;
             gap: 2rem;
         }
